@@ -3,7 +3,7 @@ import Courses from '../Courses/Courses';
 
 const Home = () => {
     return (
-        <div className='bg-dark text-white'>
+        <div className=''>
             <h3>
                 <Courses></Courses>
             </h3>

@@ -6,6 +6,7 @@ import Home from "../components/Home/Home";
 import Login from "../components/Login/Login";
 import Register from "../components/Register/Register";
 import Main from "../layout/Main";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 export const Routes = createBrowserRouter([
     {
@@ -35,7 +36,7 @@ export const Routes = createBrowserRouter([
             {
                 path: '/course-detail/:id',
                 loader: ({params}) => fetch(`https://y-pi-lilac.vercel.app/course-detail/${params.id}`),
-                element: <CourseDetails></CourseDetails>
+                element: <PrivateRoute><CourseDetails></CourseDetails></PrivateRoute>,
 
             }
            

@@ -23,12 +23,11 @@ const Register = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                setError('');
                 form.reset();
             })
             .catch(error => {
                 setError(error.message);
-                console.log(error);
-
             })
     }
 
@@ -57,14 +56,15 @@ const Register = () => {
             <div>
                 <button onClick={handelGoogleSignin} className='btn btn-info w-3/4 my-6'>Register with Google</button>
             </div>
-            <div>
-                <span>Already have an account? <Link to='/login'>Log in</Link> </span>
-            </div>
             <div className='py-3 text-danger'>
                 {
                     error && <p>{error}</p>
                 }
             </div>
+            <div>
+                <span>Already have an account? <Link to='/login'>Log in</Link> </span>
+            </div>
+            
 
         </div>
     );
