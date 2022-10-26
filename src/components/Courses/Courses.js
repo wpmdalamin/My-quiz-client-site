@@ -13,7 +13,7 @@ const Courses = () => {
         <div className=''>
             <h3>Courses</h3>
 
-            <div className='grid grid-cols-3 gap-3'>
+            <div className='grid sm:grid-cols-1 lg:grid-cols-3 gap-3'>
                 {
                     courseDetails.map(course => <div key={course._id} className="card shadow-xl my-3">
                         <figure><img src={course.image_url} alt="course" /></figure>

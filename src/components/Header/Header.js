@@ -40,9 +40,9 @@ const Header = () => {
                                         </div>
                                         :
                                         <div className='d-flex '>
-                                            <Nav.Link> <Link className='text-white no-underline	 no-underline hover:underline decoration-orange-500 decoration-wavy decoration-4' to='/register'>Register</Link> </Nav.Link>
-                                            <Nav.Link> <Link className='text-white no-underline	 no-underline hover:underline decoration-orange-500 decoration-wavy decoration-4' to='/login'>Login</Link> </Nav.Link>
-                                        </div>
+                                            <Nav.Link> <Link className='text-white no-underline	no-underline hover:underline decoration-orange-500 decoration-wavy decoration-4 ' to='/register'>Register</Link> </Nav.Link>
+                                            <Nav.Link> <Link className='text-white no-underline	no-underline hover:underline decoration-orange-500 decoration-wavy decoration-4 px-2' to='/login'>Login</Link> </Nav.Link>
+                                        </div> 
                                 }
                             </Nav.Link>
                         </Nav>
