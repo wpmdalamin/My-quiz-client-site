@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Courses = () => {
     const [courseDetails, setCourseDetails] = useState([])
     useEffect(() => {
-        fetch('https://y-pi-lilac.vercel.app/courses-details')
+        fetch('http://localhost:5000/courses-details')
             .then(res => res.json())
             .then(data => setCourseDetails(data))
     }, [])
@@ -19,6 +19,7 @@ const Courses = () => {
                         <figure><img src={course.image_url} alt="course" /></figure>
                         <div className="card-body bg-dark text-white">
                             <h2 className="card-title">{course.title}</h2>
+                            <p className='text-sm'>Price: <span>{course.price}</span>$</p>
 
                             <div className="card-actions justify-center">
                                 <Link to={`/course-detail/${course._id}`}><button className="btn btn-primary">Course Details</button></Link>

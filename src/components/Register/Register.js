@@ -1,6 +1,7 @@
 import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useState } from 'react';
 import { useContext } from 'react';
+import { AiFillGoogleCircle } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthContext/AuthProvider';
 
@@ -54,7 +55,7 @@ const Register = () => {
                 <button className='btn btn-info w-3/4 my-2'>Register</button>
             </form>
             <div>
-                <button onClick={handelGoogleSignin} className='btn btn-info w-3/4 my-6'>Register with Google</button>
+                <button onClick={handelGoogleSignin} className='btn btn-info w-3/4 my-6'> <span><AiFillGoogleCircle/></span> Register with Google</button>
             </div>
             <div className='py-3 text-danger'>
                 {
