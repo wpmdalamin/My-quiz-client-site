@@ -1,7 +1,7 @@
 import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useState } from 'react';
 import { useContext } from 'react';
-import { AiFillGoogleCircle } from 'react-icons/ai';
+import { FaGoogle } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthContext/AuthProvider';
 
@@ -34,16 +34,16 @@ const Register = () => {
 
     const handelGoogleSignin = () => {
         GoogleAuth(Provider)
-        .then(result => {
-            const user = result.user;
-            console.log(user);
-        })
-        .catch(error => {
-            setError(error.message);
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(error => {
+                setError(error.message);
 
-        })
+            })
     }
-        
+
 
     return (
         <div className='bg-neutral-800 text-white p-3 text-center'>
@@ -52,10 +52,13 @@ const Register = () => {
                 <input type="text" name='fname' placeholder="Full Name" required className="input text-white input-bordered w-3/4 my-3" />
                 <input type="email" name='email' placeholder="Email" required className="input input-bordered w-3/4 text-white " />
                 <input type="password" name="password" placeholder="password" required className="input input-bordered w-3/4 my-3 text-white" />
-                <button className='btn btn-info w-3/4 my-2'>Register</button>
+                <button className='text-white text-sm px-4 py-2 rounded bg-yellow-700 w-3/4 my-2'>Register</button>
             </form>
             <div>
-                <button onClick={handelGoogleSignin} className='btn btn-info w-3/4 my-6'> <span><AiFillGoogleCircle/></span> Register with Google</button>
+                <button onClick={handelGoogleSignin} className='text-white text-sm px-4 py-2 rounded bg-yellow-700 w-3/4 my-6'><span className=' d-flex justify-center items-center'>
+                    <span className='px-2'><FaGoogle /></span>
+                    <span>Register with Google</span>
+                </span></button>
             </div>
             <div className='py-3 text-danger'>
                 {
@@ -65,7 +68,7 @@ const Register = () => {
             <div>
                 <span>Already have an account? <Link to='/login'>Log in</Link> </span>
             </div>
-            
+
 
         </div>
     );

@@ -40,7 +40,7 @@ export const Routes = createBrowserRouter([
             },
             {
                 path: '/course-detail/:id',
-                loader: ({params}) => fetch(`http://localhost:5000/course-detail/${params.id}`),
+                loader: ({params}) => fetch(`https://y-pi-lilac.vercel.app/course-detail/${params.id}`),
                 element: <PrivateRoute><CourseDetails></CourseDetails></PrivateRoute>,
 
             }
