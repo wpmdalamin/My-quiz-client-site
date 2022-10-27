@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Blog from "../components/Blog/Blog";
 import CourseDetails from "../components/CourseDetails/CourseDetails";
 import Courses from "../components/Courses/Courses";
+import HeroSection from "../components/HeroSection/HeroSection";
 import Home from "../components/Home/Home";
 import Login from "../components/Login/Login";
 import Register from "../components/Register/Register";
@@ -32,6 +33,10 @@ export const Routes = createBrowserRouter([
             {
                 path: '/blog',
                 element: <Blog></Blog>
+            },
+            {
+                path: '/',
+                element: <HeroSection></HeroSection>
             },
             {
                 path: '/course-detail/:id',

@@ -35,7 +35,7 @@ const Login = () => {
 
     return (
         <div className='bg-neutral-800 text-white text-center p-3'>
-            <h2>Log In</h2>
+            <h2 className='my-4'>Log In</h2>
             <form onSubmit={handelLogin}>
                 <input type="email" name='email' placeholder="Email" required className="input input-bordered w-3/4 text-white " />
                 <input type="password" name="password" placeholder="password" required className="input input-bordered w-3/4 my-3 text-white" />

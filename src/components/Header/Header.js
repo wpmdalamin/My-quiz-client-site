@@ -30,7 +30,7 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" className='bg-white'/>
                     <Navbar.Collapse id="responsive-navbar-nav" className='d-flex justify-end'>
                         <Nav className='d-flex items-center justify-end'>
-                            <Link className='text-white no-underline hover:underline decoration-orange-500 decoration-wavy decoration-4 px-2' to="/">Courses</Link>
+                            <Link className='text-white no-underline hover:underline decoration-orange-500 decoration-wavy decoration-4 px-2' to="/course">Courses</Link>
                             <Link className='text-white no-underline hover:underline decoration-orange-500 decoration-wavy decoration-4 px-2' to="/blog">Blog</Link>
                             <button onClick={()=> setDark(false)} className='bg-white text-dark  rounded-full text-xl w-8 h-8'>{dark ? <button ><AiFillAlert /></button> : <button> <AiTwotoneBulb></AiTwotoneBulb> </button>}</button>
                             <Nav.Link className='bg-dark text-white'>

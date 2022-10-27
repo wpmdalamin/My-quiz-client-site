@@ -11,7 +11,7 @@ const HeroSection = () => {
                     <div>
                         <h1 className="text-5xl font-bold">MD EDU Academy</h1>
                         <p className="py-6">This websit you can learn about React, Vew, Html, Css, JavaScript, Bootstrap, WordPress and ETC.</p>
-                        <button className="btn btn-primary"> <Link className='text-white no-underline text-bold'>Course</Link> </button>
+                        <button className="text-white text-sm px-4 py-2 rounded bg-yellow-700"> <Link to="/course" className='text-white no-underline text-bold'>Course</Link> </button>
                     </div>
                 </div>
             </div>
