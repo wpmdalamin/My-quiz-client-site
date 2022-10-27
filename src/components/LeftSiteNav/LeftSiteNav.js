@@ -12,7 +12,7 @@ const LeftSiteNav = () => {
     }, [])
 
     return (
-        <div className='text-white border-r'>
+        <div className='text-white bg-teal-800'>
             <h3>Totol Courses {courses.length}</h3>
             <div>
                 {
