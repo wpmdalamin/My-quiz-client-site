@@ -6,15 +6,17 @@ import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthContext/AuthProvider';
 import logo from "../../images/MD_EDU.png";
-import { AiFillAlert, AiTwotoneBulb } from "react-icons/ai";
 import { FaUser } from "react-icons/fa";
+import { BsFillBrightnessHighFill, BsFillMoonFill } from 'react-icons/bs';
 
 const Header = () => {
     const { user, logOur } = useContext(AuthContext)
 
     const [dark, setDark] = useState(true)
 
+    const darkMood = () => {
 
+    }
     const handelLogOur = () => {
         logOur()
             .then(() => {
@@ -24,15 +26,20 @@ const Header = () => {
     }
     return (
         <div className='bg-gray-700 text-white'>
-            <Navbar className='bg-gray-700' collapseOnSelect expand="lg" bg="dark" variant="white">
+{/* 
+            <Container>
+                
+            </Container> */}
+           <Navbar className='bg-gray-700' collapseOnSelect expand="lg" bg="dark" variant="white">
                 <Container className='lg:d-flex lg:justify-content-between items-center'>
                     <Navbar.Brand><Link to="/"> <img src={logo} alt="md edu" /></Link></Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" className='bg-white'/>
-                    <Navbar.Collapse id="responsive-navbar-nav" className='d-flex justify-end'>
+                    <Navbar.Collapse id="responsive-navbar-nav" className="lg:d-flex lg:justify-end">
                         <Nav className='d-flex items-center justify-end'>
                             <Link className='text-white no-underline hover:underline decoration-orange-500 decoration-wavy decoration-4 px-2' to="/course">Courses</Link>
                             <Link className='text-white no-underline hover:underline decoration-orange-500 decoration-wavy decoration-4 px-2' to="/blog">Blog</Link>
-                            <button onClick={()=> setDark(false)} className='bg-white text-dark  rounded-full text-xl w-8 h-8'>{dark ? <button ><AiFillAlert /></button> : <button> <AiTwotoneBulb></AiTwotoneBulb> </button>}</button>
+                            <Link className='text-white no-underline hover:underline decoration-orange-500 decoration-wavy decoration-4 px-2' to="/faq">FAQ</Link>
+                            <button onClick={()=> setDark(false)} className={``}>{dark ? <button className="bg-yellow text-white rounded-full text-xl w-8 h-8"><BsFillMoonFill/></button> : <button className='rounded-full text-xl w-8 h-8 text-dark bg-white text-center'> <BsFillBrightnessHighFill/> </button>}</button>
                             <Nav.Link className='bg-dark text-white'>
                                 {
                                     user?.uid ?

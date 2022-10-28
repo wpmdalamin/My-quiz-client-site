@@ -1,16 +1,17 @@
-import { GoogleAuthProvider } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React, { useState } from 'react';
 import { useContext } from 'react';
-import { FaGoogle } from "react-icons/fa";
+import { FaGithub, FaGoogle } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthContext/AuthProvider';
 
 
 const Provider = new GoogleAuthProvider();
+const provider = new GithubAuthProvider();
 
 const Register = () => {
     const [error, setError] = useState('')
-    const { GoogleAuth, emailAndPasswordAuth } = useContext(AuthContext)
+    const { GithubAuth, GoogleAuth, emailAndPasswordAuth } = useContext(AuthContext)
 
     const handelRegister = event => {
         event.preventDefault()
@@ -43,6 +44,16 @@ const Register = () => {
 
             })
     }
+    const handelGithubSignin = () => {
+        GithubAuth(provider)
+        .then(result => {
+            const user = result.user;
+            console.log(user);
+        })
+        .catch(error => {
+            setError(error.message);
+        })
+    }
 
 
     return (
@@ -58,6 +69,12 @@ const Register = () => {
                 <button onClick={handelGoogleSignin} className='text-white text-sm px-4 py-2 rounded bg-yellow-700 w-3/4 my-6'><span className=' d-flex justify-center items-center'>
                     <span className='px-2'><FaGoogle /></span>
                     <span>Register with Google</span>
+                </span></button>
+            </div>
+            <div>
+                <button onClick={handelGithubSignin} className='text-white text-sm px-4 py-2 rounded bg-yellow-700 w-3/4 my-2'><span className=' d-flex justify-center items-center'>
+                    <span className='px-2'><FaGithub /></span>
+                    <span>Register with Github</span>
                 </span></button>
             </div>
             <div className='py-3 text-danger'>

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
-import { FaUsers, FaStar, FaStarHalfAlt } from "react-icons/fa";
+import { FaUsers, FaStar, FaStarHalfAlt, } from "react-icons/fa";
+import { BsFillAwardFill, BsFillCameraVideoFill } from "react-icons/bs";
 import { Col, Container, Row } from 'react-bootstrap';
-import Hellomd from '../Hellomd/Hellomd';
 import Pdf from "react-to-pdf";
 
 const ref = React.createRef();
@@ -15,10 +15,10 @@ const CourseDetails = () => {
 
 
     return (
-        <Container className='bg-base-200 p-4 text-white'>
+        <Container className='p-4 text-white rounded' style={{ background: "black"}} ref={ref} >
             <Row>
                 <Col>
-                    <h3 style={{ color: "black"}} ref={ref} className='my-3'>{title}</h3>
+                    <h3 className='my-3'>{title}</h3>
                     <div className='d-flex justify-between'>
                         <div className='d-flex my-2 items-center'>
                             <div className='d-flex my-2 items-center'>
@@ -44,6 +44,9 @@ const CourseDetails = () => {
                     <div>
                         <p className='text-2xl'>price: <span className='text-rose-400'>{course.price}$</span></p>
                     </div>
+                    <div>
+                        <p className='text-sm'>{course.short_details}</p>
+                    </div>
                     {/* PDF Button will be here */}
                 </Col>
                 <Col>
@@ -57,11 +60,32 @@ const CourseDetails = () => {
                     </div>
                 </Col>
             </Row>
-            <Row>
-                <Col>
-                    <h3>This course included</h3>
+            <Row className='my-4'>
+                <Col lg="3" className='bg-white text-dark p-2 rounded border mx-2'>
+                    <span> 
+
+                    </span>
+                    <h3 className='text-2xl'>This course included</h3>
                     <div>
                         <h5>300 Quizs</h5>
+                    </div>
+                </Col>
+                <Col lg="3" className='bg-white text-dark p-2 rounded border mx-2'>
+                    <span>
+                        <BsFillCameraVideoFill></BsFillCameraVideoFill>
+                    </span>
+                    <h3 className='text-2xl'>This course included</h3>
+                    <div>
+                        <h5>15 Video</h5>
+                    </div>
+                </Col>
+                <Col lg="3" className='bg-white text-dark p-2 rounded border mx-2'>
+                    <span> 
+                    <BsFillAwardFill></BsFillAwardFill>
+                    </span>
+                    <h3 className='text-2xl'>This course included</h3>
+                    <div>
+                        <h5>5 Assignment</h5>
                     </div>
                 </Col>
             </Row>
@@ -71,7 +95,7 @@ const CourseDetails = () => {
                 </Col>
             </Row>
             <Row>
-                <div>
+                <div className='text-center my-5'>
                     <Pdf targetRef={ref} filename="course.pdf">
                         {({ toPdf }) => <button onClick={toPdf}><Link className='text-white text-sm px-4 py-2 rounded bg-yellow-700 no-underline'>DownLoad PDF</Link></button>}
                     </Pdf>
